@@ -40,7 +40,7 @@ Architect **replaces** the tasks.md generation step in the OpenSpec flow.
    - `design.md` — affected files, architecture, technology choices
    - Scan project source tree for existing patterns and conventions
 
-2. **Identify layers** — Map design.md items to architectural layers using the layer ordering table. See **references/decomposition-patterns.md** for the full table and heuristics.
+2. **Identify layers** — Map design.md items to architectural layers using the layer ordering table. See **references/decomposition-patterns.md** for the full table and heuristics. Apply architectural principles from **references/principles-core.md**. For Python projects, also consult **references/principles-python.md**.
 
 3. **Decompose into tasks** — Apply granularity rules:
    - Each task touches 1-3 files
@@ -48,6 +48,7 @@ Architect **replaces** the tasks.md generation step in the OpenSpec flow.
    - Each task has a clear "done" signal (file exists, test passes, endpoint responds)
    - If a task uses "and" to join unrelated actions, split it
    - Each Given/When/Then scenario → at least one test task
+   - If principles mandate specific patterns (security tests, immutability, protocol definitions), create explicit tasks for them
 
 4. **Order by dependencies** — Arrange tasks bottom-up: infrastructure → data → services → API → UI → tests. Annotate with `<!-- depends-on -->` and `<!-- files -->` comments.
 
@@ -88,3 +89,5 @@ When decomposing, consult the relevant stack pattern reference for technology-sp
 - **references/stack-patterns-python-fastapi.md** — FastAPI/SQLAlchemy decomposition
 - **references/stack-patterns-svelte.md** — SvelteKit decomposition
 - **references/stack-patterns-k8s-helm.md** — Kubernetes/Helm/Skaffold decomposition
+- **references/principles-core.md** — Universal design principles (layer responsibilities, testing, security, data design)
+- **references/principles-python.md** — Python-specific patterns (attrs, Pydantic, SQLAlchemy, pytest)

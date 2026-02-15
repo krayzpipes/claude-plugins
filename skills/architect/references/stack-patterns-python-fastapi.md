@@ -72,3 +72,5 @@ One test file per service or route module. Map spec scenarios to test functions.
 - **Don't combine model + migration in one task** — model creation and `alembic revision --autogenerate` are separate actions
 - **Don't put Pydantic schemas with routes** — schemas are reusable; create them first, then routes that use them
 - **Separate config from app factory** — config (reading env vars) and app setup (creating FastAPI instance) are distinct tasks
+
+> For Python design constraints (immutability, testing, type contracts), see `principles-python.md`.

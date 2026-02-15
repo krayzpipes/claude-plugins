@@ -5,5 +5,12 @@
     "description": "Git-backed task graph and agent memory using Beads (bd CLI) for dependency-aware task management and session-resilient development.",
     "path": "skills/beads",
     "version": "0.1.0"
+  },
+  {
+    "name": "skill-author",
+    "type": "skill",
+    "description": "Guidelines for authoring, evaluating, and restructuring Claude Code skills.",
+    "path": "skills/skill-author",
+    "version": "0.1.0"
   }
 ]

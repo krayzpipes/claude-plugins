@@ -12,5 +12,12 @@
     "description": "Guidelines for authoring, evaluating, and restructuring Claude Code skills.",
     "path": "skills/skill-author",
     "version": "0.1.0"
+  },
+  {
+    "name": "openspec",
+    "type": "skill",
+    "description": "Guides spec-driven development using OpenSpec — plan changes with proposals, specs, design docs, and tasks before writing code.",
+    "path": "skills/openspec",
+    "version": "0.1.0"
   }
 ]

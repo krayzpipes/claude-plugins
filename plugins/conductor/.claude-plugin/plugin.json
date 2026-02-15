@@ -1,0 +1,5 @@
+{
+  "name": "conductor",
+  "description": "Orchestrates multi-agent development with OpenSpec plans and Beads task graphs",
+  "version": "0.1.0"
+}

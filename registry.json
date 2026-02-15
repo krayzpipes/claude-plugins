@@ -3,35 +3,35 @@
     "name": "beads",
     "type": "skill",
     "description": "Git-backed task graph and agent memory using Beads (bd CLI) for dependency-aware task management and session-resilient development.",
-    "path": "skills/beads",
+    "path": "plugins/beads",
     "version": "0.1.0"
   },
   {
     "name": "skill-author",
     "type": "skill",
     "description": "Guidelines for authoring, evaluating, and restructuring Claude Code skills.",
-    "path": "skills/skill-author",
+    "path": "plugins/skill-author",
     "version": "0.1.0"
   },
   {
     "name": "openspec",
     "type": "skill",
     "description": "Guides spec-driven development using OpenSpec — plan changes with proposals, specs, design docs, and tasks before writing code.",
-    "path": "skills/openspec",
+    "path": "plugins/openspec",
     "version": "0.1.0"
   },
   {
     "name": "conductor",
     "type": "skill",
     "description": "Orchestrates multi-agent development — bootstraps OpenSpec plans into Beads task graphs and coordinates agent teamwork.",
-    "path": "skills/conductor",
+    "path": "plugins/conductor",
     "version": "0.1.0"
   },
   {
     "name": "architect",
     "type": "skill",
     "description": "Decomposes OpenSpec designs into dependency-ordered, implementation-ready tasks for Conductor/Beads execution.",
-    "path": "skills/architect",
+    "path": "plugins/architect",
     "version": "0.1.0"
   }
 ]

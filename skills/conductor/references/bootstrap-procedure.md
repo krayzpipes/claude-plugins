@@ -28,6 +28,13 @@ Read `openspec/changes/<change-name>/tasks.md` and extract the task structure.
 
 Extract: task number, title, hierarchy (top-level = task, indented = subtask), and any explicit dependency markers.
 
+**Annotation parsing:** If sections contain HTML comment annotations (produced by `/arch:decompose`), extract them:
+
+- `<!-- depends-on: 1, 3 -->` — Explicit dependency declarations. When present, use these directly instead of inferring from title heuristics.
+- `<!-- files: src/models/user.py, src/api/routes/auth.py -->` — Explicit file annotations. When present, use for same-file conflict detection instead of inferring from task titles.
+
+When annotations are absent, fall back to the title-based heuristics in the Dependency Inference Rules section below.
+
 ## Step 2: Preview
 
 Display parsed tasks with inferred dependencies for user review:

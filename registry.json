@@ -26,5 +26,12 @@
     "description": "Orchestrates multi-agent development — bootstraps OpenSpec plans into Beads task graphs and coordinates agent teamwork.",
     "path": "skills/conductor",
     "version": "0.1.0"
+  },
+  {
+    "name": "architect",
+    "type": "skill",
+    "description": "Decomposes OpenSpec designs into dependency-ordered, implementation-ready tasks for Conductor/Beads execution.",
+    "path": "skills/architect",
+    "version": "0.1.0"
   }
 ]

@@ -19,5 +19,12 @@
     "description": "Guides spec-driven development using OpenSpec — plan changes with proposals, specs, design docs, and tasks before writing code.",
     "path": "skills/openspec",
     "version": "0.1.0"
+  },
+  {
+    "name": "conductor",
+    "type": "skill",
+    "description": "Orchestrates multi-agent development — bootstraps OpenSpec plans into Beads task graphs and coordinates agent teamwork.",
+    "path": "skills/conductor",
+    "version": "0.1.0"
   }
 ]

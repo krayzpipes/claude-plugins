@@ -40,7 +40,7 @@ Architect **replaces** the tasks.md generation step in the OpenSpec flow.
    - `design.md` — affected files, architecture, technology choices
    - Scan project source tree for existing patterns and conventions
 
-2. **Identify layers** — Map design.md items to architectural layers using the layer ordering table. See **references/decomposition-patterns.md** for the full table and heuristics. Apply architectural principles from **references/principles-core.md**. For Python projects, also consult **references/principles-python.md**.
+2. **Identify layers** — Map design.md items to architectural layers using the layer ordering table. See **references/decomposition-patterns.md** for the full table and heuristics. Apply architectural principles from **references/principles-core.md**. Consult the relevant language-specific principles file: **references/principles-python.md** for Python, **references/principles-typescript.md** for TypeScript, **references/principles-golang.md** for Go, **references/principles-svelte.md** for Svelte/SvelteKit.
 
 3. **Decompose into tasks** — Apply granularity rules:
    - Each task touches 1-3 files
@@ -74,6 +74,9 @@ When decomposing, consult the relevant stack pattern reference for technology-sp
 - **references/stack-patterns-python-fastapi.md** — FastAPI + SQLAlchemy + Alembic
 - **references/stack-patterns-svelte.md** — SvelteKit components and routes
 - **references/stack-patterns-k8s-helm.md** — Kubernetes, Helm charts, Skaffold
+- **references/stack-patterns-golang-http.md** — Go HTTP services (chi, gorilla/mux, echo)
+- **references/stack-patterns-duckdb.md** — DuckDB analytics and data pipelines
+- **references/stack-patterns-makefile.md** — Makefile build automation
 
 ## Edge Cases
 
@@ -89,5 +92,11 @@ When decomposing, consult the relevant stack pattern reference for technology-sp
 - **references/stack-patterns-python-fastapi.md** — FastAPI/SQLAlchemy decomposition
 - **references/stack-patterns-svelte.md** — SvelteKit decomposition
 - **references/stack-patterns-k8s-helm.md** — Kubernetes/Helm/Skaffold decomposition
+- **references/stack-patterns-golang-http.md** — Go HTTP service decomposition
+- **references/stack-patterns-duckdb.md** — DuckDB analytics/data pipeline decomposition
+- **references/stack-patterns-makefile.md** — Makefile build automation decomposition
 - **references/principles-core.md** — Universal design principles (layer responsibilities, testing, security, data design)
 - **references/principles-python.md** — Python-specific patterns (attrs, Pydantic, SQLAlchemy, pytest)
+- **references/principles-typescript.md** — TypeScript-specific patterns (strict types, Zod, Result types, Vitest)
+- **references/principles-golang.md** — Go-specific patterns (error handling, interfaces, concurrency, table-driven tests)
+- **references/principles-svelte.md** — Svelte/SvelteKit-specific patterns (reactivity, stores, SSR, component design)

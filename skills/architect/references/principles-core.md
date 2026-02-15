@@ -25,6 +25,14 @@ Tasks must respect these boundaries. If a task description mixes concerns across
 - **Structured concurrency preferred** — When concurrency is needed, prefer structured concurrency (trio) over raw asyncio. Fallback to anyio for library compatibility.
 - **Async at the boundary** — Framework-level async (HTTP handlers, DB sessions) is fine. Business logic should be synchronous unless it performs I/O.
 
+## Code Quality Tooling
+
+- **Static typing enforced** — Every project uses the language's static type checker in strict mode (mypy `--strict` for Python, `strict: true` for TypeScript, built-in for Go/Rust). No untyped code reaches main.
+- **Formatter runs on save** — All code passes through an autoformatter with zero configuration debate. Formatting is a pre-commit gate, not a review comment.
+- **Linter with zero warnings** — Linter runs in CI with warnings-as-errors. New code must not introduce lint violations. Existing violations are fixed or explicitly suppressed with a justification comment.
+- **Tool configuration lives in the repo** — Formatter, linter, and type checker settings are committed (`pyproject.toml`, `tsconfig.json`, `.golangci.yml`, etc.). No reliance on individual editor setups.
+- **Pre-commit hooks** — Projects use pre-commit (or equivalent) to run formatting, linting, and type checks before commit. Task descriptions for project setup must include hook installation.
+
 ## Testing Philosophy
 
 - **Test public API only** — Tests call the same interface external consumers use. No testing private methods or internal state.

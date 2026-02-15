@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "name": "beads",
+    "type": "skill",
+    "description": "Git-backed task graph and agent memory using Beads (bd CLI) for dependency-aware task management and session-resilient development.",
+    "path": "skills/beads",
+    "version": "0.1.0"
+  }
+]

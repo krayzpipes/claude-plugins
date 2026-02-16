@@ -62,6 +62,12 @@ Use `--json` on any command for programmatic parsing.
 
 Hierarchical IDs: `bd-a3f8` (epic) → `bd-a3f8.1` (task) → `bd-a3f8.1.1` (subtask).
 
+## CRITICAL: Claim Before Working
+
+**You MUST run `bd update <id> --status in_progress` BEFORE starting any implementation work on a task.** This is not optional — it is the mechanism that prevents multiple agents from working on the same task. Skipping this step causes duplicate work and merge conflicts.
+
+Never begin coding on a task without claiming it first.
+
 ## Solo Workflow Loop
 
 ```

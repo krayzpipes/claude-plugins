@@ -60,7 +60,7 @@ See **references/roles-and-protocol.md** for full session start/end checklists.
 3. Pick highest-priority unblocked task
 
 **During (worker hat):**
-1. `bd update <id> --status in_progress` → claim task
+1. **FIRST: `bd update <id> --status in_progress`** → claim task (MANDATORY — do this before ANY implementation)
 2. Implement, test, commit with bead ID: `bd-XXXX: description`
 3. `bd close <id> --reason "..."` → mark complete
 4. `bd ready` → next task
@@ -69,6 +69,12 @@ See **references/roles-and-protocol.md** for full session start/end checklists.
 1. Update notes on any in-progress tasks (written for future agent with zero context)
 2. Close all completed tasks with meaningful reasons
 3. `/conduct:handoff` → structured summary + sync + commit
+
+## CRITICAL: Claim Before Working
+
+**Every agent MUST run `bd update <id> --status in_progress` BEFORE starting any implementation work.** This is the lock that prevents multiple agents from colliding on the same task. Skipping this causes duplicate work.
+
+This applies whether you are a solo agent, a lead, or a worker. No exceptions.
 
 ## Coordination Rules
 

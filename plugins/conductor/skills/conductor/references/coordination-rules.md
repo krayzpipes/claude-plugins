@@ -4,9 +4,14 @@ Rules for avoiding conflicts and maintaining consistency when one or more agents
 
 ## Rule 1: One Task, One Agent
 
-Never work on a task that another agent has marked `in_progress`.
+**Before starting ANY work on a task, you MUST claim it:**
+```bash
+bd update <id> --status in_progress
+```
 
-**How to check:** `bd ready` only shows tasks that are not in_progress and not blocked. If a task you wanted is missing from `bd ready`, run `bd show <id>` to check its status.
+Never work on a task another agent has marked `in_progress`. Never start implementing without claiming first. `bd ready` only shows unclaimed, unblocked tasks — trust it.
+
+**How to check:** If a task you wanted is missing from `bd ready`, run `bd show <id>` to check its status.
 
 **If you need that task's output:** Work on a different unblocked task. The dependency graph ensures you won't be assigned work that depends on incomplete tasks.
 

@@ -1,10 +1,10 @@
-# Planning Procedures — `/fab sketch` and `/fab plan`
+# Planning Procedures — `/fab:sketch` and `/fab:plan`
 
 Both commands produce the same OpenSpec artifacts. They differ in pacing: sketch generates everything at once, plan iterates through each stage with review pauses.
 
-After either command completes, review the artifacts and run `/fab bootstrap <name>`.
+After either command completes, review the artifacts and run `/fab:bootstrap <name>`.
 
-## `/fab sketch <name>` — Fast Path
+## `/fab:sketch <name>` — Fast Path
 
 Use when requirements are clear and you know what you want.
 
@@ -27,9 +27,9 @@ Use when requirements are clear and you know what you want.
 
 5. **Pause for review:**
    - Direct the user to review artifacts in `openspec/changes/<name>/`
-   - When satisfied, run `/fab bootstrap <name>` to decompose and create the task graph
+   - When satisfied, run `/fab:bootstrap <name>` to decompose and create the task graph
 
-## `/fab plan <name>` — Deliberate Path
+## `/fab:plan <name>` — Deliberate Path
 
 Use when requirements are ambiguous, the domain is unfamiliar, or each stage needs careful review.
 
@@ -56,11 +56,11 @@ Use when requirements are ambiguous, the domain is unfamiliar, or each stage nee
 
 4. **Pause after final stage:**
    - Confirm all planning artifacts are complete
-   - Direct the user to run `/fab bootstrap <name>` when ready
+   - Direct the user to run `/fab:bootstrap <name>` when ready
 
 ### Resuming a Partial Plan
 
-If planning was interrupted, `/fab plan <name>` picks up where it left off. It checks which artifacts exist and runs `/opsx:continue` for the next missing stage.
+If planning was interrupted, `/fab:plan <name>` picks up where it left off. It checks which artifacts exist and runs `/opsx:continue` for the next missing stage.
 
 ## When to Use Sketch vs Plan
 
@@ -84,4 +84,4 @@ Both commands produce the same set of artifacts in `openspec/changes/<name>/`:
 - `design.md` — Architecture decisions, component design, interfaces
 - `tasks.md` — Implementation task breakdown (pre-architect refinement)
 
-After `/fab bootstrap`, the architect refines `tasks.md` with dependency and file annotations, then tasks are imported into td.
+After `/fab:bootstrap`, the architect refines `tasks.md` with dependency and file annotations, then tasks are imported into td.

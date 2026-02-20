@@ -15,10 +15,10 @@
       "category": "development"
     },
     {
-      "name": "fabricator",
+      "name": "fab",
       "source": "./plugins/fabricator",
       "description": "Orchestrates planning, task decomposition, and multi-agent coordination between OpenSpec and td",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "development"
     },
     {

@@ -11,7 +11,7 @@
     "type": "skill",
     "description": "Orchestrates planning, task decomposition, and multi-agent coordination between OpenSpec and td.",
     "path": "plugins/fabricator",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   {
     "name": "td",

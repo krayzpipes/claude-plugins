@@ -1,6 +1,6 @@
 # Enhanced tasks.md Format
 
-Specification for the annotated tasks.md format produced by `/arch:decompose`. Backward-compatible with Conductor's bootstrap parser.
+Specification for the annotated tasks.md format produced by fabricator's decomposition step. Backward-compatible with the bootstrap parser.
 
 ## Structure
 

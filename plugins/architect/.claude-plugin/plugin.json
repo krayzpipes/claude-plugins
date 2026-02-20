@@ -1,5 +1,0 @@
-{
-  "name": "architect",
-  "description": "Decomposes OpenSpec designs into dependency-ordered, implementation-ready tasks",
-  "version": "0.1.0"
-}

@@ -53,7 +53,7 @@ If blocked by something outside the task graph:
    td block <id>
    ```
 3. Move to next task from `td critical-path`
-4. Report blocker in next `/fab:handoff`
+4. Report blocker in next `/fab handoff`
 
 When the blocker is resolved:
 
@@ -84,7 +84,7 @@ The core implementation cycle for every task:
 5. **Submit:** `td review <id>` when complete
 6. **Repeat:** `td critical-path` → next task
 
-## Session Start Protocol — `/fab:continue`
+## Session Start Protocol — `/fab continue`
 
 When resuming work in a new session:
 
@@ -94,7 +94,7 @@ When resuming work in a new session:
 4. Pick highest-priority task from START NOW
 5. `td start <id>` → begin work
 
-## Session End Protocol — `/fab:handoff`
+## Session End Protocol — `/fab handoff`
 
 Before ending a session:
 

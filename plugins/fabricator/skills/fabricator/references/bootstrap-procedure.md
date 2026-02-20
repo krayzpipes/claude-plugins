@@ -1,4 +1,4 @@
-# Bootstrap Procedure — `/fab:bootstrap <change-name>`
+# Bootstrap Procedure — `/fab bootstrap <change-name>`
 
 Imports an OpenSpec change's tasks into td as a dependency-aware task graph.
 Interactive — always preview before creating.
@@ -188,7 +188,7 @@ If two tasks modify the same file (detected via `<!-- files -->` annotations), m
 
 ## Edge Cases
 
-- **No tasks.md found** — Error suggesting to run `/fab:sketch` or `/fab:plan` first
+- **No tasks.md found** — Error suggesting to run `/fab sketch` or `/fab plan` first
 - **Tasks already have td IDs** — Warn already bootstrapped; offer to skip or re-bootstrap
 - **Empty task list** — Error with guidance
 - **Nested subtasks (3+ levels)** — Flatten to two levels (task + subtask)

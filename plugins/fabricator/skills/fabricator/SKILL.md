@@ -28,8 +28,8 @@ OpenSpec owns *what* to build. Fabricator owns *how* to decompose it, *who does 
 ## Quick Start
 
 ```
-Fast path:    /fab:sketch <feature> → review → /fab:bootstrap <feature> → work → /fab:handoff
-Deliberate:   /fab:plan <feature>   → review → /fab:bootstrap <feature> → work → /fab:handoff
+Fast path:    /fab sketch <feature> → review → /fab bootstrap <feature> → work → /fab handoff
+Deliberate:   /fab plan <feature>   → review → /fab bootstrap <feature> → work → /fab handoff
 ```
 
 After bootstrap, the work loop is: `td critical-path` → `td start <id>` → implement → `td review <id>` → repeat.
@@ -38,20 +38,20 @@ After bootstrap, the work loop is: `td critical-path` → `td start <id>` → im
 
 | Command | Purpose |
 |---------|---------|
-| `/fab:sketch <change-name>` | Fast planning: generate all OpenSpec artifacts at once, pause for review |
-| `/fab:plan <change-name>` | Deliberate planning: iterate through proposal → specs → design with review at each stage |
-| `/fab:bootstrap <change-name>` | Decompose (if needed) → parse tasks.md → preview → create td issues → stamp IDs |
-| `/fab:continue` | Resume from handoff: new session context, critical path, pending handoffs |
-| `/fab:handoff` | End-of-session: structured handoffs for all in-progress issues |
+| `/fab sketch <change-name>` | Fast planning: generate all OpenSpec artifacts at once, pause for review |
+| `/fab plan <change-name>` | Deliberate planning: iterate through proposal → specs → design with review at each stage |
+| `/fab bootstrap <change-name>` | Decompose (if needed) → parse tasks.md → preview → create td issues → stamp IDs |
+| `/fab continue` | Resume from handoff: new session context, critical path, pending handoffs |
+| `/fab handoff` | End-of-session: structured handoffs for all in-progress issues |
 
 ## Planning Commands
 
-`/fab:sketch` and `/fab:plan` both produce the same OpenSpec artifacts (proposal, specs, design, tasks). They differ in pacing:
+`/fab sketch` and `/fab plan` both produce the same OpenSpec artifacts (proposal, specs, design, tasks). They differ in pacing:
 
 - **Sketch** — Generates everything in one pass via `/opsx:ff`. Use when requirements are clear, the domain is well-understood, and scope is small-medium. Best for standard patterns where you know what you want.
 - **Plan** — Steps through each stage via `/opsx:continue`, pausing after each artifact for review. Use when requirements are ambiguous, the domain is unfamiliar, scope is large, or stakeholders need to review at each stage.
 
-Both commands pause after planning completes. Review the artifacts in `openspec/changes/<name>/`, then run `/fab:bootstrap <name>` to decompose and create the task graph.
+Both commands pause after planning completes. Review the artifacts in `openspec/changes/<name>/`, then run `/fab bootstrap <name>` to decompose and create the task graph.
 
 See **references/planning-procedure.md** for full procedures and decision criteria.
 
@@ -65,7 +65,7 @@ Fabricator defines three roles. A solo agent wears both hats as needed.
 
 ## Session Protocol
 
-**Start (lead hat) — use `/fab:continue`:**
+**Start (lead hat) — use `/fab continue`:**
 1. `td usage --new-session` → load session context + pending handoffs
 2. `td critical-path` → see unblocked work and bottlenecks
 3. Pick highest-priority task from the START NOW section
@@ -76,7 +76,7 @@ Fabricator defines three roles. A solo agent wears both hats as needed.
 3. `td review <id>` → submit for review
 4. `td critical-path` → next task
 
-**End (lead hat) — use `/fab:handoff`:**
+**End (lead hat) — use `/fab handoff`:**
 1. `td handoff <id>` for every in-progress issue (written for future agent with zero context)
 2. `td review <id>` for any completed work
 3. Structured summary of session progress
@@ -99,7 +99,7 @@ See **references/coordination-rules.md** for conflict avoidance details and hand
 
 ## Bootstrap Overview
 
-`/fab:bootstrap <change-name>` is interactive:
+`/fab bootstrap <change-name>` is interactive:
 
 1. **Decompose** (if needed) — When tasks.md lacks annotations (`<!-- depends-on -->`, `<!-- files -->`), read OpenSpec artifacts (proposal, specs, design), identify architectural layers, decompose into implementation tasks, order by dependencies, and annotate. See **references/decomposition/decomposition-patterns.md** for layer ordering and heuristics.
 2. **Parse** — Read `openspec/changes/<name>/tasks.md`, extract task list and annotations
@@ -112,7 +112,7 @@ See **references/bootstrap-procedure.md** for full logic and dependency inferenc
 
 ## Decomposition
 
-When `/fab:bootstrap` needs to decompose (Step 0), it follows this procedure:
+When `/fab bootstrap` needs to decompose (Step 0), it follows this procedure:
 
 1. **Read inputs** — Load from `openspec/changes/<name>/`:
    - `proposal.md` — scope boundaries, what's in/out
@@ -158,8 +158,8 @@ Use td's built-in tools instead of custom reports:
 
 ## References
 
-- **references/planning-procedure.md** — `/fab:sketch` and `/fab:plan` procedures and decision criteria
-- **references/bootstrap-procedure.md** — Detailed `/fab:bootstrap` logic, decomposition, validation, and dependency inference
+- **references/planning-procedure.md** — `/fab sketch` and `/fab plan` procedures and decision criteria
+- **references/bootstrap-procedure.md** — Detailed `/fab bootstrap` logic, decomposition, validation, and dependency inference
 - **references/coordination-rules.md** — Work loop, conflict avoidance, handoff format, multi-agent safety
 - **references/decomposition/decomposition-patterns.md** — Layer ordering table, granularity rules, dependency heuristics
 - **references/decomposition/tasks-format.md** — Enhanced tasks.md format with annotation spec

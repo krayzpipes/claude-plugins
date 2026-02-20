@@ -1,5 +1,0 @@
-{
-  "name": "beads",
-  "description": "Git-backed task graph and agent memory using Beads (bd CLI)",
-  "version": "0.1.0"
-}

@@ -1,0 +1,5 @@
+{
+  "name": "td",
+  "description": "CLI task tracking with structured handoffs, progress logging, and dependency-aware scheduling across AI coding sessions",
+  "version": "0.1.0"
+}

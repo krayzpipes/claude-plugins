@@ -13,7 +13,7 @@ Register this repo as a marketplace source, then install individual plugins:
 claude plugin marketplace add /path/to/claude-plugins
 
 # Install a plugin
-claude plugin install beads
+claude plugin install fabricator
 ```
 
 ### Direct Plugin Loading
@@ -21,7 +21,7 @@ claude plugin install beads
 Load a plugin directly for testing or one-off use:
 
 ```bash
-claude --plugin-dir /path/to/claude-plugins/plugins/beads
+claude --plugin-dir /path/to/claude-plugins/plugins/fabricator
 ```
 
 ## Structure
@@ -34,11 +34,9 @@ claude --plugin-dir /path/to/claude-plugins/plugins/beads
 
 | Plugin | Description |
 |--------|-------------|
-| **beads** | Git-backed task graph and agent memory using Beads (bd CLI) |
+| **fabricator** | Orchestrates planning, task decomposition, and multi-agent coordination between OpenSpec and td |
+| **td** | CLI task tracking with structured handoffs, progress logging, and dependency-aware scheduling across AI coding sessions |
 | **skill-author** | Guidelines for authoring, evaluating, and restructuring Claude Code skills |
-| **openspec** | Spec-driven development using OpenSpec proposals, specs, designs, and tasks |
-| **conductor** | Orchestrates multi-agent development with OpenSpec plans and Beads task graphs |
-| **architect** | Decomposes OpenSpec designs into dependency-ordered, implementation-ready tasks |
 
 ## Adding a Plugin
 

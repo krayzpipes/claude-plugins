@@ -27,6 +27,13 @@
       "description": "CLI task tracking with structured handoffs, progress logging, and dependency-aware scheduling across AI coding sessions",
       "version": "0.1.0",
       "category": "development"
+    },
+    {
+      "name": "pw",
+      "source": "./plugins/playwright",
+      "description": "Run and generate Playwright UI tests from OpenSpec feature specs",
+      "version": "0.1.0",
+      "category": "testing"
     }
   ]
 }
